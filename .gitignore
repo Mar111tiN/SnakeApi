@@ -1,0 +1,8 @@
+**/__pycache__
+*.ipynb
+*.pptx
+**/data
+output
+results*
+**/.snakemake
+**/.pynb_checkpoints

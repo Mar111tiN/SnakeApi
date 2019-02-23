@@ -1,0 +1,39 @@
+import pandas as pd
+import os
+
+configfile: 'config.yaml'
+workdir: config['workdir']
+
+SAMPLES = config['samples']
+ref_gen = os.path.join(config['input_folder'], "genome.fa")
+
+include:
+    "rules/bwa.snk"
+
+rule all:
+    input:
+        "plots/quals.svg"
+
+
+rule bcftools_call:
+    input:
+        fa = ref_gen,
+        bam = expand("sorted_reads/{sample}.bam", sample=SAMPLES),
+        bai = expand("sorted_reads/{sample}.bam.bai", sample=SAMPLES)
+    output:
+        "calls/all.vcf"
+    params:
+        pmr = config['bcf']['prior_mutation_rate']
+    conda:
+        "envs/bwa_samtools.yaml"
+    shell:
+        "samtools mpileup -g -f {input.fa} {input.bam} | "
+        "bcftools call -P {params.pmr} -mv - > {output}"
+
+rule plot_quals:
+    input:
+        "calls/all.vcf"
+    output:
+        "plots/quals.svg"
+    script:
+        "scripts/plot-quals.py"

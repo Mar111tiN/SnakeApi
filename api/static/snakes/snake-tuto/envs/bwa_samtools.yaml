@@ -1,0 +1,29 @@
+name: newtest
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - anaconda
+  - r
+dependencies:
+  - bcftools=1.9=hd68223c_1
+  - bwa=0.7.17=ha441bb4_5
+  - libdeflate=1.0=h1de35cc_1
+  - samtools=1.9=h28b8610_6
+  - bzip2=1.0.6=h1de35cc_1002
+  - ca-certificates=2018.11.29=ha4d7672_0
+  - curl=7.64.0=heae2a1f_0
+  - krb5=1.16.3=h24a3359_1000
+  - libcurl=7.64.0=h76de61e_0
+  - libcxx=7.0.0=h2d50403_2
+  - libedit=3.1.20170329=hcfe32e1_1001
+  - libssh2=1.8.0=hf30b1f0_1003
+  - llvm-meta=7.0.0=0
+  - ncurses=6.1=h0a44026_1002
+  - openssl=1.0.2p=h1de35cc_1002
+  - perl=5.26.2=h79c3c89_1001
+  - tk=8.6.9=ha441bb4_1000
+  - xz=5.2.4=h1de35cc_1001
+  - zlib=1.2.11=h1de35cc_1004
+prefix: /Users/mahtin/miniconda/envs/newtest
+

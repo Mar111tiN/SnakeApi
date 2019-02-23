@@ -1,0 +1,9 @@
+input_folder: /Users/mahtin/Dropbox/Icke/Sites/Python/Snakeflask/data
+samples:
+  - A
+  - B
+  - C
+workdir: /Users/mahtin/Dropbox/Icke/Sites/Python/Snakeflask/results
+
+bcf:
+  prior_mutation_rate: 1e-3
